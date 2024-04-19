@@ -5,8 +5,6 @@ import re
 from HelloLLM import askLLM
 from filterOut import saveCompleted
 
-#LLM Format breakdown detection and logging
-
 def html_to_text(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
     return soup.get_text(separator='\n', strip=True)
@@ -16,7 +14,7 @@ def process_file(file_name, nickname):
         with open(file_name, 'r', encoding='utf-8', errors='ignore') as file:
             contents = file.read()
 
-            # Detect if contents are HTML and convert to plain text if true
+            #Detects if contents are HTML and convert to plain text if true
             if '<html>' in contents.lower() or bool(re.search('<.*?>', contents)):
                 contents = html_to_text(contents)
 
@@ -50,7 +48,6 @@ def main():
         with open('completed.txt', 'r') as completed_file:
             for line in completed_file:
                 line_stripped = line.strip()
-                # Store all unique substrings of the last 20 characters from each line
                 for i in range(len(line_stripped) - 20 + 1):
                     completed_substrings.add(line_stripped[i:i+20])
     except FileNotFoundError:
@@ -61,10 +58,10 @@ def main():
             for line in sample_file:
                 file_name = line.strip()
                 to_check = file_name[-20:]
-                # Check if this substring exists in the set of completed_substrings
+                #Check if this string exists in the set of completed_substrings
                 if any(to_check in s for s in completed_substrings):
                     print(f"Skipping already processed file: {file_name}")
-                    continue  # Skip this file as it's already been processed
+                    continue  #Skip this file as it's already been processed
                 time.sleep(3)
                 full_path = os.path.join(directory_path, file_name)
                 process_file(full_path, file_name)
