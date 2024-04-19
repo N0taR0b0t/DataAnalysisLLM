@@ -2,7 +2,7 @@ import openai
 import configparser
 
 def gpt_interact(prompt):
-    # Load API key from configuration file
+    #Load API key from config file
     config = configparser.ConfigParser()
     config.read('config.ini')
     openai.api_key = config['openai']['apikey']
