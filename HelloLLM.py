@@ -1,15 +1,14 @@
-from langchain_community.llms import Ollama
+#from langchain_community.llms import Ollama
 from GPT import gpt_interact
 import sys
 import re
 import time
 
-ollama = Ollama(base_url='http://localhost:11434', model="Llama2-13B")
+#ollama = Ollama(base_url='http://localhost:11434', model="Llama2-13B")
 
 def read_categories():
     try:
         with open('categories.txt', 'r') as file:
-            # Normalize and validate categories when reading
             categories = [line.strip() for line in file.readlines() if line.strip() and all(c.isalpha() or c.isspace() for c in line)]
         return categories
     except FileNotFoundError:
@@ -25,10 +24,9 @@ def update_categories(new_categories):
 def askLLM(start_time, filename):
     categories = read_categories()
     try:
-        # Read the contents of Instructions.txt
         with open("Instructions.txt", "r") as instructions_file:
             instructions_content = instructions_file.read()
-        categories_text = "Category List: " + ", ".join(sorted(set(categories)))  # Remove duplicates and sort
+        categories_text = "Category List: " + ", ".join(sorted(set(categories)))
 
         with open("input.txt", "r") as input_file:
             input_content = input_file.read()
@@ -47,12 +45,11 @@ def askLLM(start_time, filename):
 
         new_extracted_categories = set()
         matches = re.findall(r"'(.*?)'", response)
-        for match in [m.strip() for m in matches]:  # Strip spaces from extracted categories
-            normalized_match = match.lower()  # Normalize to lower case for consistent comparison
-            if normalized_match not in [c.lower() for c in categories]:  # Comparison against lower-cased list
+        for match in [m.strip() for m in matches]:
+            normalized_match = match.lower()
+            if normalized_match not in [c.lower() for c in categories]:
                 new_extracted_categories.add(match)
 
-        # Update categories if new ones were added
         if new_extracted_categories:
             update_categories(new_extracted_categories)
 
