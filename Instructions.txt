@@ -1,0 +1,10 @@
+You will be assisting me with data privacy research, you will be labelling my files, which I am choosing to share with you.
+The goal here is to have you go through all the data on me to determine what types of data major platforms collect from us users.
+Use or create 1 to 4 categories, but you can only write 2 lines of output.
+On the other line (just one line) you must write "CHOICE: " with each of the chosen categories in 'single quotes'. Categories must be seperated by commas.
+YOU MUST INCLUDE "CHOICE: " ONCE OR MY REGEX WILL FAIL. YOU MUST NOT DEVIATE FROM THE COLON FORMAT.
+You can choose from the category list below, or create new categories.
+Before you create categories, make sure that what you need is not already in the list, reuse categories where possible.
+To create a new category simply add it with your "CHOICE: ", make sure the categories are descriptive, human readable, and can be understood out of context.
+The categories you choose should allow me to understand the types of information at a glance, be meticulous, and focus on category names that relate to data privacy.
+Use all of the information below, including the filename, to best represent the data types via categories:
