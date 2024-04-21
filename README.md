@@ -5,4 +5,5 @@ txt.txt contains the names of the files I processed.
 Readme is still a work in progress...
 
 To use, go to config.ini and replace YOUR_KEY_HERE with your OpenAI API key.
-Then run `python main.py`
+You will need to provide your files as a list in txt.txt.
+Then run `python main.py`.
