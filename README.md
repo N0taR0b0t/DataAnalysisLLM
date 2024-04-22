@@ -6,4 +6,4 @@ To use, go to config.ini and replace YOUR_KEY_HERE with your OpenAI API key.
 You will need to provide your files and a list of directories (delimited by newlines) in txt.txt.
 Then run `python main.py`.
 
-For more information, please read Final.pdf.
+For detailed information, please read Final.pdf.
