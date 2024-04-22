@@ -10,7 +10,7 @@ The project leverages Python scripts and large language models, primarily OpenAI
 
 **Results**
 
-The analysis resulted in a comprehensive list of 93 data categories, significantly refined from the initial 2000 categories. This categorization helps in understanding the extent and specificity of data collection by digital platforms. The research also included a manual review of privacy laws in Canada, Germany, and the United States, comparing the level of consumer protections provided. The category list and manual review can be found in Final.pdf
+The analysis resulted in a comprehensive list of 93 data categories, significantly refined from the initial 2000 categories. This categorization helps in understanding the extent and specificity of data collection by digital platforms. The research also included a manual review of privacy laws in Canada, Germany, and the United States, comparing the level of consumer protections provided. The category list and manual review of privacy laws can be found in the document called Final.pdf.
 
 **How to Use**
 
